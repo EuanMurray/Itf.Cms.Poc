@@ -1,0 +1,14 @@
+﻿@inherits Umbraco.Web.Mvc.UmbracoTemplatePage<ContentModels.NewsArticleGrid>
+@using ContentModels = Umbraco.Web.PublishedContentModels;
+@{
+	Layout = "Master.cshtml";
+}
+
+
+@Html.Partial("~/Views/Partials/SectionHeader.cshtml")
+
+<div class="article">
+    <p>NEWS & FEATURES  Posted @CurrentPage.CreateDate.ToString("hh:mm tt dd/MM/yy") by @Umbraco.Field("author")</p>
+    
+@Html.GetGridHtml(Model.Content, "grid")
+</div>

@@ -1,0 +1,22 @@
+﻿@inherits Umbraco.Web.Macros.PartialViewMacroPage
+
+
+
+@if (Model.MacroParameters["relatedImages"] != null)
+{
+
+    var relatedImagesIds = @Model.MacroParameters["relatedImages"];
+
+    <div class="slides">
+            @* for each item in children of the selected media folder *@
+            @foreach (var mediaItem in relatedImagesIds.ToString().Split(','))
+            {
+            var media = Umbraco.Media(mediaItem);
+               <div>
+                   <div>Photo Credit: @media.credit</div>
+                   <img src="@media.GetCropUrl("umbracoFile", "maincrop")" alt="@media.caption" />
+                   <figcaption>@media.caption</figcaption>
+                   </div>
+            }
+            </div>
+}

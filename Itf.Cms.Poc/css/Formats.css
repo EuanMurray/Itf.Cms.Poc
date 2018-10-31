@@ -1,0 +1,20 @@
+
+
+/**umb_name:Quotations*/
+.quotations{font-size: 30px;
+color: #39ba55;
+padding-top: 10px;}
+
+/**umb_name:Headline*/
+.headline{font-size: 35px;
+background-color: #696969;
+color: #FFFFFF;
+padding: 15px;
+line-height: 35px;}
+
+/**umb_name:Text-Right*/
+.text-right{float: right;}
+
+/**umb_name:Summary*/
+.summary{font-size: 17px;
+color: #39ba55;}

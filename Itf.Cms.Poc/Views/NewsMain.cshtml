@@ -1,0 +1,18 @@
+﻿@inherits Umbraco.Web.Mvc.UmbracoTemplatePage<ContentModels.NewsMain>
+@using ContentModels = Umbraco.Web.PublishedContentModels;
+@{
+    Layout = "Master.cshtml";
+}
+
+@Html.Partial("~/Views/Partials/SectionHeader.cshtml")
+
+<section class="section">
+
+    <div class="container">
+        <div class="col-md-9">
+            <h2>@Umbraco.Field("articlesTitle")</h2>
+            @Umbraco.RenderMacro("ListArticles")
+        </div>
+    </div>
+
+</section>
