@@ -275,8 +275,22 @@
     <Content Include="config\Lang\ru-RU.user.xml" />
     <Content Include="config\Lang\sv-SE.user.xml" />
     <Content Include="config\Lang\zh-CN.user.xml" />
+    <Content Include="css\Formats.css" />
+    <Content Include="css\slick-theme.css" />
+    <Content Include="css\slick.css" />
+    <Content Include="css\umbraco-starterkit-style.css" />
     <Content Include="default.aspx" />
     <Content Include="Global.asax" />
+    <Content Include="scripts\React\app.js" />
+    <Content Include="scripts\React\Components\Carousel-test.js" />
+    <Content Include="scripts\React\Components\Carousel.js" />
+    <Content Include="scripts\React\dist\app-bundle.js" />
+    <Content Include="scripts\React\dist\bundle.js" />
+    <Content Include="scripts\React\dist\carsousel-bundle.js" />
+    <Content Include="scripts\React\webpack.config.js" />
+    <Content Include="scripts\slick.js" />
+    <Content Include="scripts\slick.min.js" />
+    <Content Include="scripts\umbraco-starterkit-app.js" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -334,6 +348,7 @@
     <Content Include="Views\MacroPartials\LatestBlogposts.cshtml" />
     <Content Include="Views\MacroPartials\ListArticles.cshtml" />
     <Content Include="Views\MacroPartials\ShowRelatedImages.cshtml" />
+    <Content Include="scripts\React\package.json" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -345,6 +360,7 @@
     <Analyzer Include="..\packages\Microsoft.CodeAnalysis.Analyzers.1.0.0\analyzers\dotnet\cs\Microsoft.CodeAnalysis.Analyzers.dll" />
     <Analyzer Include="..\packages\Microsoft.CodeAnalysis.Analyzers.1.0.0\analyzers\dotnet\cs\Microsoft.CodeAnalysis.CSharp.Analyzers.dll" />
   </ItemGroup>
+  <ItemGroup />
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>

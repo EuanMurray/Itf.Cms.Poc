@@ -76,19 +76,26 @@
     <script src="https://code.jquery.com/jquery-3.1.0.min.js" integrity="sha256-cCueBR6CsyA4/9szpPfrX3s49M9vUU5BgtiJj06wt/s=" crossorigin="anonymous"></script>
     <script src="https://ajax.aspnetcdn.com/ajax/jquery.validate/1.13.1/jquery.validate.min.js"></script>
     <script src="https://ajax.aspnetcdn.com/ajax/mvc/5.2.3/jquery.validate.unobtrusive.min.js"></script>
-<script src="@Url.Content("~/scripts/umbraco-starterkit-app.js")"></script>
 
-@*<script src="/js/jquery.min.js"></script>*@
-<script src="/scripts/slick.min.js"></script>
-<script>
-    $(document).ready(function(){
-        $('.slides').slick({
-            autoplay:false,
-            dots: true,
-            adaptiveHeight: false
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/react/15.4.2/react.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/react/15.4.2/react-dom.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.21.1/babel.min.js"></script>
+
+    @RenderSection("scripts", required: false)
+
+    <script src="@Url.Content("~/scripts/umbraco-starterkit-app.js")"></script>
+
+    @*<script src="/js/jquery.min.js"></script>*@
+    <script src="/scripts/slick.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('.slides').slick({
+                autoplay: false,
+                dots: true,
+                adaptiveHeight: false
+            });
         });
-    });
-</script>
+    </script>
 
 </body>
 

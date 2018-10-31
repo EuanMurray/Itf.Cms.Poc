@@ -6,29 +6,33 @@
 
 @Html.Partial("~/Views/Partials/SectionHeader.cshtml")
 
-    <div class="article">
-        <div class="container">
-            <p>NEWS & FEATURES  Posted @CurrentPage.CreateDate.ToString("hh:mm tt dd/MM/yy") by @Umbraco.Field("author")</p>
+<div class="article">
+    <div class="container">
+        <p>NEWS & FEATURES  Posted @CurrentPage.CreateDate.ToString("hh:mm tt dd/MM/yy") by @Umbraco.Field("author")</p>
 
-            @if (@Model.Content.LeadImage != null)
-            {
-             var media = @Umbraco.Media(@CurrentPage.LeadImage.ToString());
-                <div>
-                    <div>Photo Credit: @media.credit</div>
-                   <img src="@media.GetCropUrl("umbracoFile", "maincrop")" alt="@media.caption" />
-                </div>
-            }
-                <div class="headline">
-                    <p>@Umbraco.Field("title")</p>
-                </div>
-                <br>
-                <p>@Umbraco.Field("content")</p>
-                </div>
+        @if (@Model.Content.LeadImage != null)
+        {
+            var media = @Umbraco.Media(@CurrentPage.LeadImage.ToString());
+            <div>
+                <div>Photo Credit: @media.credit</div>
+                <img src="@media.GetCropUrl("umbracoFile", "maincrop")" alt="@media.caption" />
+            </div>
+        }
+        <div class="headline">
+            <p>@Umbraco.Field("title")</p>
+        </div>
+        <br>
+        <p>@Umbraco.Field("content")</p>
     </div>
-    
-    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
-    <script type="text/javascript">
-    $(document).ready(function() {
+</div>
+
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
+<script type="text/javascript">
+    $(document).ready(function () {
         $("p > .quotations").parent().addClass("quotations-container");
     });
-    </script>
+</script>
+
+@*@section scripts {
+    <script src="~/scripts/React/dist/bundle.js"></script>
+}*@
