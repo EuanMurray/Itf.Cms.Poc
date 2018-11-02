@@ -1,33 +1,47 @@
-﻿@inherits Umbraco.Web.Macros.PartialViewMacroPage
+﻿@using Umbraco.Web.UI.Pages
+@inherits Umbraco.Web.Macros.PartialViewMacroPage
 
 @if (Model.MacroParameters["relatedImages"] != null)
 {
+    <div id="image-carousel"></div>
 
+    var mediaItems = new List<IPublishedContent>();
     var relatedImagesIds = @Model.MacroParameters["relatedImages"];
 
+    <div>
+        @foreach (var mediaItem in relatedImagesIds.ToString().Split(','))
+        {
+            var media = Umbraco.TypedMedia(mediaItem);
+            mediaItems.Add(media);
+        }
 
-    <div id="carousel" data.relatedImagesIds="test"></div>
+        @{
+            var relatedImageData = mediaItems.Select(x => new
+            {
+                x.Id,
+                Url = x.Url
+            });
 
+            var serializer = new System.Web.Script.Serialization.JavaScriptSerializer();
+            string RelatedImageJson = serializer.Serialize(relatedImageData);
 
-
+            @Html.Hidden("mediaItems", @RelatedImageJson)
+        }
+    </div>
 }
 
-@*<script src="~/scripts/React/dist/carsousel-bundle.js"></script>*@
+<script src="https://cdnjs.cloudflare.com/ajax/libs/react/15.4.2/react.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/react/15.4.2/react-dom.js"></script>
+<script src="~/scripts/React/dist/carousel-bundle.js"></script>
 
+<link rel="stylesheet" type="text/css" charset="UTF-8" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick.min.css" />
+<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick-theme.min.css" />
 
-
-    <script type="text/babel">
-        class Carousel extends React.Component {
-        render() {
-        return (
-        <div>Hello world - {this.props.relatedImagesIds}</div>
-        );
-        }
-        }
-
-        var root = document.getElementById('carousel')
-        ReactDOM.render(
-        <Carousel {...(root.relatedImagesIds)} />, root)
-    </script>
+<script>
+    var imageData = document.getElementById('mediaItems').value;
+    var root = document.getElementById('image-carousel');
+    var element = React.createElement(Components.ImageCarousel, { "imageData": imageData });
+    ReactDOM.render(element, root);
+</script>
 
 

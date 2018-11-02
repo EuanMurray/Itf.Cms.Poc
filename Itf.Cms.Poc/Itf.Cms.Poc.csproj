@@ -276,20 +276,15 @@
     <Content Include="config\Lang\sv-SE.user.xml" />
     <Content Include="config\Lang\zh-CN.user.xml" />
     <Content Include="css\Formats.css" />
-    <Content Include="css\slick-theme.css" />
-    <Content Include="css\slick.css" />
     <Content Include="css\umbraco-starterkit-style.css" />
     <Content Include="default.aspx" />
     <Content Include="Global.asax" />
     <Content Include="scripts\React\app.js" />
-    <Content Include="scripts\React\Components\Carousel-test.js" />
     <Content Include="scripts\React\Components\Carousel.js" />
+    <Content Include="scripts\React\Components\ImageCarousel.js" />
     <Content Include="scripts\React\dist\app-bundle.js" />
-    <Content Include="scripts\React\dist\bundle.js" />
-    <Content Include="scripts\React\dist\carsousel-bundle.js" />
+    <Content Include="scripts\React\dist\carousel-bundle.js" />
     <Content Include="scripts\React\webpack.config.js" />
-    <Content Include="scripts\slick.js" />
-    <Content Include="scripts\slick.min.js" />
     <Content Include="scripts\umbraco-starterkit-app.js" />
     <Content Include="Web.config" />
   </ItemGroup>

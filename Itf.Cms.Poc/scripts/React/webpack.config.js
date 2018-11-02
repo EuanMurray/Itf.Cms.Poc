@@ -1,4 +1,4 @@
-﻿module.exports = [
+﻿const config = [
     {
         context: __dirname,
         entry: "./app.js",
@@ -23,12 +23,15 @@
         }
     },
     {
-    context: __dirname,
-    entry: "./components/Carousel.js",
+        context: __dirname,
+        mode: 'development',
+    entry: "./components/ImageCarousel.js",
     output: {
         path: __dirname + "/dist",
-        filename: "carsousel-bundle.js"
-    },
+        filename: "carousel-bundle.js",
+        library: 'Components',
+        libraryTarget: 'umd'
+        },
     watch: true,
     module: {
         rules: [
@@ -43,6 +46,9 @@
                 }
             }
         ]
-    }
+        }
 }
 ]
+
+
+module.exports = config
