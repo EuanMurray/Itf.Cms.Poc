@@ -280,11 +280,11 @@
     <Content Include="default.aspx" />
     <Content Include="Global.asax" />
     <Content Include="scripts\React\app.js" />
-    <Content Include="scripts\React\Components\Carousel.js" />
     <Content Include="scripts\React\Components\ImageCarousel.js" />
     <Content Include="scripts\React\dist\app-bundle.js" />
     <Content Include="scripts\React\dist\carousel-bundle.js" />
     <Content Include="scripts\React\webpack.config.js" />
+    <Content Include="scripts\ShowRelatedImages\ShowRelatedImages.js" />
     <Content Include="scripts\umbraco-starterkit-app.js" />
     <Content Include="Web.config" />
   </ItemGroup>
