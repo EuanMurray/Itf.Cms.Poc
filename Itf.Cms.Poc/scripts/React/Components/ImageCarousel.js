@@ -32,7 +32,7 @@ export class ImageCarousel extends Component {
         <Carousel showThumbs={false} showStatus={false} infiniteLoop={true}>
           {images}
         </Carousel>
-        <RBCarousel>{imagesBoot}</RBCarousel>
+        <RBCarousel autoplay={false}>{imagesBoot}</RBCarousel>
       </div>
     );
   }
